@@ -9,7 +9,7 @@ use App\Services\YouTubeInfoFetcher;
 
 class StoreYoutubeChannelStoryByLogin implements Story
 {
-    private YoutubeChannelCommandRepository$commandRepository;
+    private YoutubeChannelCommandRepository $commandRepository;
     private YouTubeInfoFetcher $fetcher;
 
     public function __construct()
