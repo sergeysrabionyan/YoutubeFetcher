@@ -4,10 +4,12 @@
 namespace App;
 
 
+use App\Controllers\YoutubeController;
+
 class App
 {
     public function run()
     {
-        // Старт приложения
+        return new YoutubeController();
     }
 }
