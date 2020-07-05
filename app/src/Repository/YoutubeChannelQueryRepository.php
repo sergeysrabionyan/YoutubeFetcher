@@ -28,9 +28,9 @@ class YoutubeChannelQueryRepository extends MongoManager
         return $channel;
     }
 
-    public function getByLogin($channelLogin): ?YouTubeChannel
+    public function getByChannelName($channelName): ?YouTubeChannel
     {
-        $findOneResult = $this->collection->findOne(['title' => $channelLogin]);
+        $findOneResult = $this->collection->findOne(['title' => $channelName]);
         if (!$findOneResult) {
             return null;
         }

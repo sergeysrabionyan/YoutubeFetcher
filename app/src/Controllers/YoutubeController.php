@@ -5,17 +5,17 @@ namespace App\Controllers;
 
 
 use App\Services\YoutubeStatisticHandler;
-use App\Stories\StoreYoutubeChannelStoryByLogin;
-use App\Stories\StoreYoutubeVideoByLoginStory;
+use App\Stories\StoreYoutubeChannelByNameStory;
+use App\Stories\StoreYoutubeVideoByChannelNameStory;
 
 class YoutubeController
 {
-    public function saveChannel($request, StoreYoutubeChannelStoryByLogin $story)
+    public function saveChannel($request, StoreYoutubeChannelByNameStory $story)
     {
         return $story->execute($request);
     }
 
-    public function saveVideo($request, StoreYoutubeVideoByLoginStory $story)
+    public function saveVideo($request, StoreYoutubeVideoByChannelNameStory $story)
     {
         return $story->execute($request);
     }

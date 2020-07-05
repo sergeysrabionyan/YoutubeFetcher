@@ -17,7 +17,7 @@ class YoutubeStatisticHandler
 
     public function getRatingList($data)
     {
-        $videos = $this->queryRepository->getAllByLogin($data);
+        $videos = $this->queryRepository->getAllByName($data);
         $result['likes'] = 0;
         $result['dislikes'] = 0;
         foreach ($videos as $key => $video) {

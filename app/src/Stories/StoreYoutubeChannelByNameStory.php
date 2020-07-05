@@ -7,7 +7,7 @@ namespace App\Stories;
 use App\Repository\YoutubeChannelCommandRepository;
 use App\Services\YouTubeInfoFetcher;
 
-class StoreYoutubeChannelStoryByLogin implements Story
+class StoreYoutubeChannelByNameStory implements Story
 {
     private YoutubeChannelCommandRepository $commandRepository;
     private YouTubeInfoFetcher $fetcher;
@@ -20,7 +20,7 @@ class StoreYoutubeChannelStoryByLogin implements Story
 
     public function execute($data = null)
     {
-        $fetchData = $this->fetcher->getChannelInfoByLogin($data);
+        $fetchData = $this->fetcher->getChannelInfoByChannelName($data);
         if (!$fetchData) {
             return null;
         }

@@ -6,7 +6,7 @@ use App\Repository\YoutubeChannelQueryRepository;
 use App\Repository\YoutubeVideoCommandRepository;
 use App\Services\YouTubeInfoFetcher;
 
-class StoreYoutubeVideoByLoginStory implements Story
+class StoreYoutubeVideoByChannelNameStory implements Story
 {
     private YoutubeChannelQueryRepository $queryRepository;
     private YoutubeVideoCommandRepository $commandRepository;
@@ -21,9 +21,9 @@ class StoreYoutubeVideoByLoginStory implements Story
 
     public function execute($data = null)
     {
-        $channelId = $this->queryRepository->getByLogin($data)->channelId;
+        $channelId = $this->queryRepository->getByChannelName($data)->channelId;
         if (!$channelId) {
-            $channelId = $this->fetcher->getChannelInfoByLogin($data)->items[0]->id;
+            $channelId = $this->fetcher->getChannelInfoByChannelName($data)->items[0]->id;
         }
         $videoIds = $this->fetcher->getChannelVideoIds($channelId);
         if (!$videoIds) {

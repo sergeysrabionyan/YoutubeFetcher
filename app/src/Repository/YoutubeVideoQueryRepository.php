@@ -10,9 +10,9 @@ class YoutubeVideoQueryRepository extends MongoManager
 {
     protected $collectionName = 'youtubeVideos';
 
-    public function getAllByLogin($channelLogin)
+    public function getAllByName($channelName)
     {
-        $findAll = $this->collection->find(['channelTitle' => $channelLogin])->toArray();
+        $findAll = $this->collection->find(['channelTitle' => $channelName])->toArray();
         if (!$findAll) {
             throw new \Exception('Видео не найдены');
         }

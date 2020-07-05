@@ -15,7 +15,7 @@ class YouTubeInfoFetcher
         $this->client = new Client();
     }
 
-    public function getChannelInfoByLogin(string $channel)
+    public function getChannelInfoByChannelName(string $channel)
     {
         $queryParameters = [
             'key' => self::API_KEY,
